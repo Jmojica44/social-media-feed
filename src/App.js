@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import CreatePostForm from './Components/CreatePostForm/CreatePostForm';
+import PostList from './Components/PostList/PostList';
+import Post from './Components/Post/Post';
 
 function App() {
+  
+  const [entries, setEntries] = useState([{name: 'Jon', post: 'Coding is hard.'}, {name: 'Megan', post: "Just get good."}])
+
+
+  function addNewPost(entry){
+    let tempEntries = [...entries, entry];
+    setEntries(tempEntries);
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <h3>Name
+        </h3>
+        <div>
+          <div>
+          <CreatePostForm addNewPostProperty={addNewPost}/>
+          </div>
+          <div>
+          <PostList parentEntries = {entries}/>
+          </div>
+        </div> 
+      </div>
     </div>
   );
 }
