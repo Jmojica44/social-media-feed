@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import CreatePostForm from './Components/CreatePostForm/CreatePostForm';
 import PostList from './Components/PostList/PostList';
-import Post from './Components/Post/Post';
+import './App.css';
+
 
 function App() {
-  
+  const [bgColor, setBgColor] = useState("#FFFFFF")
   const [entries, setEntries] = useState([{name: 'Jon', post: 'Coding is hard.'}, {name: 'Megan', post: "Just get good."}])
 
 
@@ -26,8 +27,9 @@ function App() {
         <div className = 'col-sm-6'>
           <div className='border-box'>
           <PostList parentEntries = {entries}/>
+          <customButton setBgColor={setBgColor}/>
           </div>
-      </div>
+        </div>
       </div>
     </div>
   );
