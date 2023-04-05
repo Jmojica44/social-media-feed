@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 
-const CustomButton = (props) => {
-    useEffect(() => {
-        handleClick();
-    }, []);
-    
-const PostList = (props) => {
+// const CustomButton = (props) => {
+//     useEffect(() => {
+//         handleClick();
+//     }, []);
 
-    const handleClick = () => {
-        props.setColor('#00FF00');
-    };
+// const PostList = (props) => {
 
-}
+//     const handleClick = () => {
+//         props.setColor('#00FF00');
+//     };
+
+// }
